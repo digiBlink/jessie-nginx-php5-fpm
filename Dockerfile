@@ -50,11 +50,11 @@ ENV PHP_CFLAGS="-fstack-protector-strong -fpic -fpie -O2"
 ENV PHP_CPPFLAGS="$PHP_CFLAGS"
 ENV PHP_LDFLAGS="-Wl,-O1 -Wl,--hash-style=both -pie"
 
-ENV GPG_KEYS 1A4E8B7277C42E53DBA9C7B9BCAA30EA9C0D5763 6E4F6AB321FDC07F2C332E3AC2BF0BC433CFC8B3
+ENV GPG_KEYS 0BD78B5F97500D450838F95DFE857D9A90D90EC1 6E4F6AB321FDC07F2C332E3AC2BF0BC433CFC8B3
 
-ENV PHP_VERSION 7.0.27
-ENV PHP_URL="https://secure.php.net/get/php-7.0.27.tar.xz/from/this/mirror" PHP_ASC_URL="https://secure.php.net/get/php-7.0.27.tar.xz.asc/from/this/mirror"
-ENV PHP_SHA256="4b2bc823e806dbf7b62fe0b92b0d14b0c6e03f88c3fc5d96278416c54ce11f6c" PHP_MD5=""
+ENV PHP_VERSION 5.6.33
+ENV PHP_URL="https://secure.php.net/get/php-5.6.33.tar.xz/from/this/mirror" PHP_ASC_URL="https://secure.php.net/get/php-5.6.33.tar.xz.asc/from/this/mirror"
+ENV PHP_SHA256="9004995fdf55f111cd9020e8b8aff975df3d8d4191776c601a46988c375f3553" PHP_MD5=""
 
 RUN set -xe; \
 	\
@@ -256,9 +256,6 @@ ADD files/php-fpm.conf /usr/local/etc/
 ADD files/php.ini /usr/local/etc/php/
 ADD files/run.sh /
 RUN chmod +x /run.sh
-
-#RUN sed -i "s/nginx:x:100:101:nginx:\/var\/lib\/nginx:\/sbin\/nologin/nginx:x:100:101:nginx:\/DATA:\/bin\/bash/g" /etc/passwd && \
-#    sed -i "s/nginx:x:100:101:nginx:\/var\/lib\/nginx:\/sbin\/nologin/nginx:x:100:101:nginx:\/DATA:\/bin\/bash/g" /etc/passwd-
 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /usr/bin/wp-cli && chown nginx:nginx /usr/bin/wp-cli
 
