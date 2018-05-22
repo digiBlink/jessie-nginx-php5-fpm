@@ -6,8 +6,8 @@ Container with:
 
 * Debian Jessie (default time zone `Europe/Riga`)
 * `nginx` 1.10.3
-* PHP-FPM 5.6.35
-* WP-CLI 1.5.0
+* PHP-FPM 5.6.36
+* WP-CLI 1.5.1
 * `git`
 
 Based on following containers:
