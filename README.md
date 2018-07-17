@@ -20,7 +20,7 @@ Based on following containers:
 
 To get it running just enter:
 
-`docker run -d --name your_container v /sites/yourdomain.com:/DATA -p 80:80 -t digiblink/jessie-nginx-php5-fpm`
+`docker run -d --name your_container -v /sites/yourdomain.com:/DATA -p 80:80 -t digiblink/jessie-nginx-php5-fpm`
 
 After that you can use BusyBox bash, to log into container and use [WP-CLI](http://wp-cli.org), to install [WordPress](https://wordpress.org):
 
