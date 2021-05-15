@@ -5,9 +5,9 @@ Maintained by [digiBlink](http://digiblink.eu) - [docker hub link](https://hub.d
 Container with:
 
 * Debian Jessie (default time zone `Europe/Riga`)
-* `nginx` 1.10.3
+* `nginx` 1.6.2
 * PHP-FPM 5.6.38
-* WP-CLI 2.0.1
+* WP-CLI 2.4.0
 * `git`
 
 Based on following containers:
